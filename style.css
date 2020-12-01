@@ -3,4 +3,44 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Spartan", sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 12px; }
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem; }
+  nav a {
+    text-decoration: none;
+    margin-left: 1rem;
+    color: black; }
+  nav #logo {
+    margin-right: 1rem; }
+
+#hamburger {
+  display: none; }
+  #hamburger .line {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black; }
+
+@media screen and (max-width: 700px) {
+  #nav-links {
+    display: none; }
+  #hamburger {
+    display: block;
+    z-index: 100; }
+  #logo {
+    transform: translate(300%, 0); }
+  #nav-links.open {
+    display: block;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10vh; }
+  #nav-links.open a {
+    transform: translate(-30%, 170%);
+    float: right; } }
