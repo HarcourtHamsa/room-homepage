@@ -2,36 +2,32 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Spartan", sans-serif;
+  font-family: 'Inter', sans-serif; 
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 nav {
+  background-color: transparent;
+  z-index: 100000000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
-  align-items: center;
-  padding: 1rem;
+  padding: 3rem;
 
   a {
     text-decoration: none;
-    margin-left: 1rem;
-    color: black;
-  }
-
-  #logo {
-    margin-right: 1rem;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    color: white;
   }
 }
 
 #hamburger {
   display: none;
-
-  .line {
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    background-color: black;
-  }
 }
 
 @media screen and (max-width: 700px) {
@@ -44,22 +40,169 @@ nav {
     z-index: 100;
   }
 
+  #hamburger.open {
+    background-color: black;
+  }
+
   #logo {
-    transform: translate(300%, 0);
+    margin: 0 auto;
+  }
+
+  nav.open {
+    background-color: white;
   }
 
   #nav-links.open {
     display: block;
-    background-color: white;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10vh;
+    right: 1%;
+
+    a {
+      color: black;
+    }
+  }
+}
+
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 20vh);
+  grid-template-areas:
+    "box1 box1 box1 box1 box2 box2 box2"
+    "box1 box1 box1 box1 box2 box2 box2"
+    "box1 box1 box1 box1 box2 box2 box2"
+    "box1 box1 box1 box1 box2 box2 box2"
+    "box1 box1 box1 box1 box2 box2 box2"
+    "box3 box3 box4 box4 box4 box5 box5"
+    "box3 box3 box4 box4 box4 box5 box5";
+}
+
+#box1 {
+  grid-area: box1;
+}
+
+#box1.one {
+  background: url("./images/desktop-image-hero-2.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#box1.zero {
+  background: url("./images/mobile-image-hero-1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#box1.two {
+  background: url("./images/mobile-image-hero-3.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#box2 {
+  grid-area: box2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
   }
 
-  #nav-links.open a {
-    transform: translate(-30%, 170%);
-    float: right;
+  .center {
+    width: 90%;
   }
+
+  #cta {
+    letter-spacing: 5px;
+    padding-top: 10rem !important;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  #controls {
+    position: absolute;
+    padding: 1rem;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    cursor: pointer;
+
+    span {
+      margin: 2rem 1.6rem;
+      text-align: center;
+      padding: inherit;
+    }
+  }
+}
+
+#box3 {
+  grid-area: box3;
+  background: url("./images/image-about-dark.jpg") no-repeat;
+  background-size: cover;
+}
+
+#box4 {
+  grid-area: box4;
+  font-weight: 500;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .w-90{
+    width: 90%;
+  }
+
+  h2 {
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 1.6;
+    width: 90%;
+  }
+}
+
+#box5 {
+  grid-area: box5;
+  background: url("./images/image-about-light.jpg") no-repeat center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 700px) {
+  html,
+  body {
+    font-size: 1rem;
+  }
+
+  main {
+    height: 500vh;
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  section {
+    height: inherit;
+  }
+}
+
+.line-height {
+  line-height: 1.6;
+}
+
+.mb-2 {
+  margin-bottom: 3rem;
+}
+
+.mt-3 {
+  margin-top: 4rem;
+}
+
+.text-grey {
+  color: hsl(0, 0%, 63%);
 }
