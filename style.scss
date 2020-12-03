@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif; 
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
   font-size: 13px;
 }
@@ -152,7 +152,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  .w-90{
+  .w-90 {
     width: 90%;
   }
 
@@ -186,7 +186,11 @@ main {
     flex-direction: column;
   }
 
-  section {
+  #box1,
+  #box2,
+  #box3,
+  #box4,
+  #box5 {
     height: inherit;
   }
 }
